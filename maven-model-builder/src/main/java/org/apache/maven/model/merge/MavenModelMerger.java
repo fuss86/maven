@@ -450,7 +450,16 @@ public class MavenModelMerger
                 target.setSite( tgt );
                 mergeSite( tgt, src, sourceDominant, context );
             }
+            mergeSite_ChildSiteUrlInheritAppendPath( tgt, src, sourceDominant, context );
         }
+    }
+
+    @Override
+    protected void mergeSite( Site target, Site source, boolean sourceDominant, Map<Object, Object> context )
+    {
+        mergeSite_Id( target, source, sourceDominant, context );
+        mergeSite_Name( target, source, sourceDominant, context );
+        mergeSite_Url( target, source, sourceDominant, context );
     }
 
     @Override

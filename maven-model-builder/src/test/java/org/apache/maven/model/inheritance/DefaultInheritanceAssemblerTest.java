@@ -104,6 +104,16 @@ public class DefaultInheritanceAssemblerTest
     }
 
     /**
+     * MNG-5951 special case test: inhertid with partial override
+     * @throws Exception
+     */
+    public void testNoAppendUrls2()
+        throws Exception
+    {
+        testInheritance( "no-append-urls2" );
+    }
+
+    /**
      * Tricky case: flat directory structure, but child directory != artifactId.
      * Model interpolation does not give same result when calculated from build or from repo...
      * This is why MNG-5000 fix in code is marked as bad practice (uses file names)
